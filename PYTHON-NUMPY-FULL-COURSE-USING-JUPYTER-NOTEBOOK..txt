@@ -1,0 +1,414 @@
+Welcome to Numpy course.
+[1]
+import numpy as np
+[2]
+print("Hello Rohit")
+Hello Rohit
+
+[3]
+import sklearn
+[4]
+i=45
+[5]
+print(7)
+7
+
+[6]
+i
+45
+[7]
+# Markdown code First(*Rohit*-tally).Second(**Rohit**-Bold).Third and Four Same(three and Four star use code before name and after).
+Rohit
+
+Rohit
+
+Rohit
+
+Rohit
+
+[8]
+myarr=np.array([3,6,32,7])
+[9]
+myarr
+array([ 3,  6, 32,  7])
+[10]
+myarr=np.array([3,6,32,7], np.int32)
+[11]
+myarr
+array([ 3,  6, 32,  7])
+[12]
+myarr[0]
+3
+[13]
+myarr[2]
+32
+[14]
+myarr=np.array([[3,6,37,7]], np.int64)
+[15]
+myarr
+array([[ 3,  6, 37,  7]], dtype=int64)
+[16]
+myarr[0,0]
+3
+[17]
+myarr[0,2]
+37
+[18]
+myarr.shape
+(1, 4)
+[19]
+myarr.dtype
+dtype('int64')
+[20]
+myarr[0,1]=45
+[21]
+myarr
+array([[ 3, 45, 37,  7]], dtype=int64)
+Array Creation:Conversion From other Python Structures.
+[22]
+listarray=np.array([1,2,3,4,5,6,7,8,9])
+[23]
+listarray
+array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+[24]
+listarray=np.array([[1,2,3],[4,5,6],[7,8,9]])
+[25]
+listarray
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+[26]
+listarray.dtype
+dtype('int32')
+[27]
+listarray.shape
+(3, 3)
+[28]
+listarray.size
+9
+[29]
+listarray[1,2]=10
+[30]
+listarray
+array([[ 1,  2,  3],
+       [ 4,  5, 10],
+       [ 7,  8,  9]])
+[31]
+zeros=np.zeros((2,5))
+[32]
+zeros
+array([[0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.]])
+[33]
+zeros.shape
+(2, 5)
+[34]
+zeros.dtype
+dtype('float64')
+[35]
+rng=np.arange(15)
+[36]
+rng
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14])
+[37]
+lspace=np.linspace(1,5,12)
+[38]
+lspace
+array([1.        , 1.36363636, 1.72727273, 2.09090909, 2.45454545,
+       2.81818182, 3.18181818, 3.54545455, 3.90909091, 4.27272727,
+       4.63636364, 5.        ])
+[39]
+lspace=np.linspace(1,4,4)
+[40]
+lspace
+array([1., 2., 3., 4.])
+[41]
+emp=np.empty((4,6))
+[42]
+emp
+array([[6.23042070e-307, 4.67296746e-307, 1.69121096e-306,
+        1.06811083e-306, 7.56587585e-307, 1.37961302e-306],
+       [1.05699242e-307, 8.01097889e-307, 1.78020169e-306,
+        7.56601165e-307, 1.02359984e-306, 1.69118108e-306],
+       [7.56593696e-307, 1.86918699e-306, 1.69120281e-306,
+        1.42419802e-306, 1.42419530e-306, 1.24610994e-306],
+       [1.69121096e-306, 1.05700515e-307, 1.11261774e-306,
+        1.29060871e-306, 8.34424766e-308, 2.12203497e-312]])
+[43]
+emp_like=np.empty_like(lspace)
+[44]
+emp_like
+array([1., 2., 3., 4.])
+[45]
+ide=np.identity(45)
+[46]
+ide
+array([[1., 0., 0., ..., 0., 0., 0.],
+       [0., 1., 0., ..., 0., 0., 0.],
+       [0., 0., 1., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 1., 0., 0.],
+       [0., 0., 0., ..., 0., 1., 0.],
+       [0., 0., 0., ..., 0., 0., 1.]])
+[47]
+ide.shape
+(45, 45)
+[48]
+arr=np.arange(99)
+[49]
+arr
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+       51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67,
+       68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84,
+       85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98])
+[50]
+arr.reshape
+<function ndarray.reshape>
+[51]
+arr.reshape(3,33)
+array([[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
+        16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+        32],
+       [33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48,
+        49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64,
+        65],
+       [66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81,
+        82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97,
+        98]])
+[52]
+arr=np.arange(6)
+[53]
+arr
+array([0, 1, 2, 3, 4, 5])
+[54]
+arr.reshape(2,3)
+array([[0, 1, 2],
+       [3, 4, 5]])
+[55]
+arr.reshape(3,2)
+array([[0, 1],
+       [2, 3],
+       [4, 5]])
+[56]
+arr.shape
+(6,)
+[57]
+arr=arr.ravel()
+[58]
+arr
+array([0, 1, 2, 3, 4, 5])
+[59]
+listarray=np.array([[1,2,3],[4,5,6],[7,8,9]])
+[60]
+arr=np.arange(1,10)
+[61]
+arr
+array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+[62]
+arr.reshape(3,3)
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+[63]
+arr.sum(axis=0)
+45
+[64]
+arr.T
+array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+[65]
+arr.flat
+<numpy.flatiter at 0x1851a504600>
+[66]
+for item in arr.flat:
+    print(item)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+[67]
+arr.ndim
+1
+[68]
+arr.size
+9
+[69]
+arr.nbytes
+36
+[70]
+one=np.arange(1,6)
+[71]
+one.argmax()
+4
+[72]
+one.argmin()
+0
+[73]
+one.argsort()
+array([0, 1, 2, 3, 4], dtype=int64)
+[74]
+listarray.argsort()
+array([[0, 1, 2],
+       [0, 1, 2],
+       [0, 1, 2]], dtype=int64)
+[75]
+listarray
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+[76]
+listarray.argmax()
+8
+[77]
+listarray.argmin()
+0
+[78]
+listarray.argmax(axis=0)
+array([2, 2, 2], dtype=int64)
+[79]
+listarray.argmax(axis=1)
+array([2, 2, 2], dtype=int64)
+[80]
+listarray.argmin(axis=0)
+array([0, 0, 0], dtype=int64)
+[81]
+listarray.argmin(axis=1)
+array([0, 0, 0], dtype=int64)
+[82]
+listarray.argsort()
+array([[0, 1, 2],
+       [0, 1, 2],
+       [0, 1, 2]], dtype=int64)
+[83]
+listarray.argsort(axis=0)
+array([[0, 0, 0],
+       [1, 1, 1],
+       [2, 2, 2]], dtype=int64)
+[84]
+listarray.argsort(axis=1)
+array([[0, 1, 2],
+       [0, 1, 2],
+       [0, 1, 2]], dtype=int64)
+[85]
+listarray.ravel()
+array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+[86]
+listarray
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+[87]
+listarray.reshape(3,3)
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+[88]
+listarray.reshape(1,9)
+array([[1, 2, 3, 4, 5, 6, 7, 8, 9]])
+[89]
+listarray.reshape(9,1)
+array([[1],
+       [2],
+       [3],
+       [4],
+       [5],
+       [6],
+       [7],
+       [8],
+       [9]])
+[90]
+listarray2=np.arange(1,10)
+[91]
+listarray2.reshape(3,3)
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+[92]
+listarray+listarray2
+---------------------------------------------------------------------------
+ValueError Traceback (most recent call last)
+~\AppData\Local\Temp\ipykernel_3828\1011979820.py in <module> ----> 1 listarray+listarray2
+ValueError: operands could not be broadcast together with shapes (3,3) (9,)
+[96]
+[334,4]+[22,4]
+[334, 4, 22, 4]
+[94]
+np.sqrt(listarray)
+array([[1.        , 1.41421356, 1.73205081],
+       [2.        , 2.23606798, 2.44948974],
+       [2.64575131, 2.82842712, 3.        ]])
+[95]
+listarray.sum()
+45
+[97]
+listarray.max()
+9
+[98]
+listarray.min()
+1
+[99]
+listarray
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+[100]
+np.where(listarray>5)
+(array([1, 2, 2, 2], dtype=int64), array([2, 0, 1, 2], dtype=int64))
+[101]
+type(np.where(listarray<5))
+tuple
+[102]
+np.count_nonzero(listarray)
+9
+[103]
+np.count_nonzero(arr)
+9
+[104]
+np.nonzero(arr)
+(array([0, 1, 2, 3, 4, 5, 6, 7, 8], dtype=int64),)
+[105]
+arr[1]=0
+[106]
+np.nonzero(arr)
+(array([0, 2, 3, 4, 5, 6, 7, 8], dtype=int64),)
+[107]
+type(np.nonzero(arr))
+tuple
+[108]
+import sys
+[109]
+python_array=[0,1,2,3]
+[110]
+Numpy_array=np.array(python_array)
+[112]
+Numpy_array
+array([0, 1, 2, 3])
+[111]
+Numpy_array=np.arange(0,4)
+[113]
+Numpy_array
+array([0, 1, 2, 3])
+[115]
+sys.getsizeof(1)*len(python_array)
+112
+[116]
+Numpy_array.itemsize*Numpy_array.size
+16
+[117]
+Numpy_array
+array([0, 1, 2, 3])
+[118]
+Numpy_array.tolist()
+[0, 1, 2, 3]
+[121]
+Numpy_array.sort()
+[122]
+Numpy_array
+array([0, 1, 2, 3])
